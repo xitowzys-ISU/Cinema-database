@@ -43,6 +43,17 @@ CREATE TABLE `genres`  (
   PRIMARY KEY (`id`)
 );
 
+CREATE TABLE `group_of_places`  (
+  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `hall_formats`  (
+  `hall_id` int(0) UNSIGNED NULL,
+  `format_id` int(0) UNSIGNED NULL
+);
+
 CREATE TABLE `hall_types`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -54,7 +65,6 @@ CREATE TABLE `halls`  (
   `number` tinyint(0) UNSIGNED NOT NULL,
   `rows` smallint(0) UNSIGNED NOT NULL,
   `seats` smallint(0) UNSIGNED NOT NULL,
-  `format_id` int(0) UNSIGNED NOT NULL,
   `type_id` int(0) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 );
@@ -87,9 +97,9 @@ CREATE TABLE `positions`  (
 
 CREATE TABLE `price_group_of_seats`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `price` decimal(10, 2) UNSIGNED NOT NULL,
+  `group_of_places_id` int(0) UNSIGNED NOT NULL,
   `hall_id` int(0) UNSIGNED NOT NULL,
+  `price` decimal(10, 2) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -97,11 +107,10 @@ CREATE TABLE `products`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NULL,
-  `availability` enum("yes", "no") NOT NULL,
   `price` decimal(10, 2) UNSIGNED NOT NULL,
-  `unit_of_measurement` enum("kg", "piece") NOT NULL,
+  `unit_of_measurement` enum('kg', 'piece') NOT NULL,
   `quantity` int(0) UNSIGNED NOT NULL DEFAULT 0,
-  `delivery_id` int(0) UNSIGNED NOT NULL,
+  `delivery_id` int(0) UNSIGNED NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -167,11 +176,13 @@ ALTER TABLE `film_genres` ADD CONSTRAINT `fk_film_genres_films_film_id` FOREIGN 
 ALTER TABLE `film_genres` ADD CONSTRAINT `fk_film_genres_genres_genre_id` FOREIGN KEY (`genre_id`) REFERENCES `genres` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `films` ADD CONSTRAINT `fk_films_mpaa_raitings_raiting_id` FOREIGN KEY (`raiting_id`) REFERENCES `mpaa_ratings` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `films_period` ADD CONSTRAINT `fk_films_period_films_film_id` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-ALTER TABLE `halls` ADD CONSTRAINT `fk_halls_formats_format_id` FOREIGN KEY (`format_id`) REFERENCES `formats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `hall_formats` ADD CONSTRAINT `fk_hall_formats_formats_format_id` FOREIGN KEY (`format_id`) REFERENCES `formats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `hall_formats` ADD CONSTRAINT `fk_hall_formats_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `halls` ADD CONSTRAINT `fk_halls_hall_types_type_id` FOREIGN KEY (`type_id`) REFERENCES `hall_types` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `places` ADD CONSTRAINT `fk_places_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `places` ADD CONSTRAINT `fk_places_price_group_of_seats_price_group_of_seat_id` FOREIGN KEY (`price_group_of_seat_id`) REFERENCES `price_group_of_seats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `price_group_of_seats` ADD CONSTRAINT `fk_price_group_of_seats_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `price_group_of_seats` ADD CONSTRAINT `fk_price_group_of_seats_group_of_places_group_of_places_id` FOREIGN KEY (`group_of_places_id`) REFERENCES `group_of_places` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `products` ADD CONSTRAINT `fk_products_deliveries_delivery_id` FOREIGN KEY (`delivery_id`) REFERENCES `deliveries` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_staff_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `staff` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_products_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
