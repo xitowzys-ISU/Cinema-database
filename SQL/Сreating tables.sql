@@ -62,7 +62,7 @@ CREATE TABLE `halls`  (
 CREATE TABLE `mpaa_ratings`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
-  `description` text NULL,
+  `description` varchar(255) NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -89,6 +89,7 @@ CREATE TABLE `price_group_of_seats`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `price` decimal(10, 2) UNSIGNED NOT NULL,
+  `hall_id` int(0) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -153,7 +154,7 @@ CREATE TABLE `suppliers`  (
 CREATE TABLE `tickets`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `session_id` int(0) UNSIGNED NOT NULL,
-  `employee_id` int(0) UNSIGNED NOT NULL,
+  `employee_id` int(0) UNSIGNED NULL,
   `payment_type_id` int(0) UNSIGNED NOT NULL,
   `data` datetime(0) NOT NULL,
   PRIMARY KEY (`id`)
@@ -170,6 +171,7 @@ ALTER TABLE `halls` ADD CONSTRAINT `fk_halls_formats_format_id` FOREIGN KEY (`fo
 ALTER TABLE `halls` ADD CONSTRAINT `fk_halls_hall_types_type_id` FOREIGN KEY (`type_id`) REFERENCES `hall_types` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `places` ADD CONSTRAINT `fk_places_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `places` ADD CONSTRAINT `fk_places_price_group_of_seats_price_group_of_seat_id` FOREIGN KEY (`price_group_of_seat_id`) REFERENCES `price_group_of_seats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `price_group_of_seats` ADD CONSTRAINT `fk_price_group_of_seats_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `products` ADD CONSTRAINT `fk_products_deliveries_delivery_id` FOREIGN KEY (`delivery_id`) REFERENCES `deliveries` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_staff_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `staff` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_products_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;

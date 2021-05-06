@@ -4,19 +4,23 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 BEGIN;
 
-INSERT INTO `positions` VALUES 
-    (1, 'Управляющий кинотеатра'),
-    (2, 'Бухгалтер'),
-    (3, 'Менеджер по кинопрокату'),
-    (4, 'Киноинженер'),
-    (5, 'Киномеханик'),
-    (6, 'Инженер по эксплуатации кинотеатра'),
-    (7, 'Администратор'),
-    (8, 'Контролер'),
-    (9, 'Старший кассир'),
-    (11, 'Бармен'),
-    (12, 'Уборщик'),
-    (13, 'Охранник');
+INSERT INTO `film_genres` VALUES 
+    (1, 23),
+    (1, 3),
+    (2, 9),
+    (2, 21),
+    (3, 9);
+
+INSERT INTO `films` VALUES 
+    (1, 'Гнев человеческий', '01:58:00', 5),
+    (2, 'Девятаев', '02:00:00', 2),
+    (3, 'Чернобыль', '02:16:00', 2);
+
+INSERT INTO `formats` VALUES 
+    (1, '2D'),
+    (2, '3D'),
+    (3, 'Dolby Atmos'),
+    (4, 'IMAX');
 
 INSERT INTO `genres` VALUES 
     (1, 'Аниме'),
@@ -46,6 +50,34 @@ INSERT INTO `genres` VALUES
     (25, 'Фантастика'),
     (26, 'Фэнтези');
 
+INSERT INTO `hall_types` VALUES 
+    (1, 'Обычный'),
+    (2, 'VIP');
+
+INSERT INTO `halls` VALUES 
+    (1, 1, 15, 415, 4, 1);
+
+INSERT INTO `mpaa_ratings` VALUES 
+    (1, 'G', 'Нет возрастных ограничений'),
+    (2, 'PG', 'Рекомендуется присутствие родителей'),
+    (3, 'PG-13', 'Детям до 13 лет просмотр не желателен'),
+    (4, 'R', 'Лицам до 17 лет обязательно присутствие взрослого'),
+    (5, 'NC-17', 'Лицам до 18 лет просмотр запрещен');
+
+INSERT INTO `positions` VALUES 
+    (1, 'Управляющий кинотеатра'),
+    (2, 'Бухгалтер'),
+    (3, 'Менеджер по кинопрокату'),
+    (4, 'Киноинженер'),
+    (5, 'Киномеханик'),
+    (6, 'Инженер по эксплуатации кинотеатра'),
+    (7, 'Администратор'),
+    (8, 'Контролер'),
+    (9, 'Старший кассир'),
+    (11, 'Бармен'),
+    (12, 'Уборщик'),
+    (13, 'Охранник');
+
 INSERT INTO `staff` VALUES 
     (1, 'Мальцев', 'Егор', 'Прохорович', '1978-08-11', 'egor25051980@gmail.com', 'Россия, г. Иркутск, Социалистическая ул., д. 15 кв.59', '+79963006462', 1, 180000.00, 1),
     (2, 'Башкатова', 'Елена', 'Наумовна', '1965-03-20', NULL, 'Россия, г. Иркутск, Космонавтов ул., д. 6 кв.87', '+79491682581', 12, 23000.84, 2),
@@ -58,25 +90,12 @@ INSERT INTO `staff` VALUES
     (9, 'Балыков', 'Тимофей', 'Антонович', '1999-04-18', 'timofey1988@mail.ru', 'Россия, г. Иркутск, Ленина ул., д. 1 кв.175', '+79097592665', 8, 25400.00, 1),
     (10, 'Поливанов', 'Василий', 'Романович', '1998-11-01', 'vasiliy81@hotmail.com', 'Россия, г. Иркутск, Дорожная ул., д. 1 кв.14', '+79695079937', 10, 35000.00, 1);
 
-INSERT INTO `formats` VALUES 
-    (1, '2D'),
-    (2, '3D'),
-    (3, 'Dolby Atmos'),
-    (4, 'IMAX');
-
 INSERT INTO `staff_statuses` VALUES 
     (1, 'Работает'),
     (2, 'Уволен'),
     (3, 'На больничном'),
     (4, 'В отпуске'),
     (5, 'Декретный отпуск');
-
-INSERT INTO `mpaa_ratings` VALUES 
-    (1, 'G', 'All ages admitted. Nothing that would offend parents for viewing by children.'),
-    (2, 'PG', 'Some material may not be suitable for children. Parents urged to give \"parental guidance\". May contain some material parents might not like for their young children.'),
-    (3, 'PG-13', 'Some material may be inappropriate for children under 13. Parents are urged to be cautious. Some material may be inappropriate for pre-teenagers.'),
-    (4, 'R', 'Under 17 requires accompanying parent or adult guardian. Contains some adult material. Parents are urged to learn more about the film before taking their young children with them.'),
-    (5, 'NC-17', 'No One 17 and Under Admitted. Clearly adult. Children are not admitted.');
 
 COMMIT;
 
