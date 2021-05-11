@@ -128,7 +128,7 @@ CREATE TABLE `sessions`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `hall_id` int(0) UNSIGNED NOT NULL,
   `film_id` int(0) UNSIGNED NOT NULL,
-  `time` time(0) NOT NULL,
+  `datetime` datetime(0) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
