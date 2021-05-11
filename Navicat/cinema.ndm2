@@ -1372,234 +1372,6 @@
           },
           {
             "objectType": "Table_MARIADB",
-            "name": "purchases",
-            "comment": "",
-            "engine": "",
-            "characterSet": "",
-            "collation": "",
-            "autoIncrement": 0,
-            "tablespace": "",
-            "storage": "",
-            "insertMethod": "",
-            "connection": "",
-            "checksum": false,
-            "rowFormat": "",
-            "avgRowLength": 0,
-            "maxRows": 0,
-            "minRows": 0,
-            "keyBlockSize": 0,
-            "packKeys": "",
-            "delayKeyWrite": false,
-            "dataDirectory": "",
-            "indexDirectory": "",
-            "statsAutoRecalc": "",
-            "statsPersistent": "",
-            "statsSamplePages": "",
-            "union": "",
-            "pageChecksum": false,
-            "transactional": false,
-            "oldName": "",
-            "encryption": false,
-            "encryptionKeyID": 0,
-            "IETFQuotes": false,
-            "createOptions": "",
-            "createTime": "",
-            "checkTime": "",
-            "dataFree": 0,
-            "dataLength": 0,
-            "indexLength": 0,
-            "maxDataLength": 0,
-            "rows": 0,
-            "updateTime": "",
-            "DDL": "",
-            "partitionBy": "",
-            "partitionByExpr": "",
-            "partitions": 0,
-            "partitionKeyAlgorithm": "",
-            "subPartitionBy": "",
-            "subPartitionByExpr": "",
-            "subPartitions": 0,
-            "subPartitionKeyAlgorithm": "",
-            "fields": [
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": true,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "employee_id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "employee_id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "product_id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "product_id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "quantity",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "quantity"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "date",
-                "type": "datetime",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": false,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "date"
-              }
-            ],
-            "indexes": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_MARIADB",
-              "name": "",
-              "fields": [
-                {
-                  "objectType": "IndexField_MARIADB",
-                  "name": "id",
-                  "keyLength": 0,
-                  "order": "",
-                  "oldName": ""
-                }
-              ],
-              "oldName": "",
-              "indexMethod": "",
-              "comment": ""
-            },
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_MARIADB",
-                "name": "fk_purchases_staff_employee_id",
-                "fields": [
-                  "employee_id"
-                ],
-                "referenceSchema": "Default",
-                "referenceTable": "staff",
-                "referenceFields": [
-                  "id"
-                ],
-                "onDelete": "RESTRICT",
-                "onUpdate": "RESTRICT",
-                "sourceCardinality": "OneOrManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_MARIADB",
-                "name": "fk_purchases_products_product_id",
-                "fields": [
-                  "product_id"
-                ],
-                "referenceSchema": "Default",
-                "referenceTable": "products",
-                "referenceFields": [
-                  "id"
-                ],
-                "onDelete": "RESTRICT",
-                "onUpdate": "RESTRICT",
-                "sourceCardinality": "OneOrManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              }
-            ],
-            "triggers": [],
-            "tablePartitions": []
-          },
-          {
-            "objectType": "Table_MARIADB",
             "name": "films_period",
             "comment": "",
             "engine": "",
@@ -4048,6 +3820,275 @@
             ],
             "triggers": [],
             "tablePartitions": []
+          },
+          {
+            "objectType": "Table_MARIADB",
+            "name": "purchases",
+            "comment": "",
+            "engine": "",
+            "characterSet": "",
+            "collation": "",
+            "autoIncrement": 0,
+            "tablespace": "",
+            "storage": "",
+            "insertMethod": "",
+            "connection": "",
+            "checksum": false,
+            "rowFormat": "",
+            "avgRowLength": 0,
+            "maxRows": 0,
+            "minRows": 0,
+            "keyBlockSize": 0,
+            "packKeys": "",
+            "delayKeyWrite": false,
+            "dataDirectory": "",
+            "indexDirectory": "",
+            "statsAutoRecalc": "",
+            "statsPersistent": "",
+            "statsSamplePages": "",
+            "union": "",
+            "pageChecksum": false,
+            "transactional": false,
+            "oldName": "",
+            "encryption": false,
+            "encryptionKeyID": 0,
+            "IETFQuotes": false,
+            "createOptions": "",
+            "createTime": "",
+            "checkTime": "",
+            "dataFree": 0,
+            "dataLength": 0,
+            "indexLength": 0,
+            "maxDataLength": 0,
+            "rows": 0,
+            "updateTime": "",
+            "DDL": "",
+            "partitionBy": "",
+            "partitionByExpr": "",
+            "partitions": 0,
+            "partitionKeyAlgorithm": "",
+            "subPartitionBy": "",
+            "subPartitionByExpr": "",
+            "subPartitions": 0,
+            "subPartitionKeyAlgorithm": "",
+            "fields": [
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": true,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "employee_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": true,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "employee_id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "product_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "product_id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "quantity",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "quantity"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "date",
+                "type": "datetime",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": false,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "date"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "payment_type_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": true,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "payment_type_id"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_MARIADB",
+              "name": "",
+              "fields": [
+                {
+                  "objectType": "IndexField_MARIADB",
+                  "name": "id",
+                  "keyLength": 0,
+                  "order": "",
+                  "oldName": ""
+                }
+              ],
+              "oldName": "",
+              "indexMethod": "",
+              "comment": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_purchases_staff_employee_id",
+                "fields": [
+                  "employee_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "staff",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_purchases_products_product_id",
+                "fields": [
+                  "product_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "products",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_purchases_payment_types_payment_type_id",
+                "fields": [
+                  "payment_type_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "payment_types",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ],
+            "triggers": [],
+            "tablePartitions": []
           }
         ],
         "views": []
@@ -4137,7 +4178,7 @@
           "schemaName": "Default",
           "tableName": "staff",
           "x": 310,
-          "y": 840,
+          "y": 830,
           "width": 300,
           "height": 250,
           "isBold": false,
@@ -4168,9 +4209,9 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "halls",
-          "x": 980,
+          "x": 970,
           "y": 160,
-          "width": 330,
+          "width": 320,
           "height": 140,
           "isBold": false,
           "titleColor": {
@@ -4249,7 +4290,7 @@
           "schemaName": "Default",
           "tableName": "price_group_of_seats",
           "x": 1370,
-          "y": 230,
+          "y": 110,
           "width": 280,
           "height": 120,
           "isBold": false,
@@ -4264,9 +4305,9 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "places",
-          "x": 980,
+          "x": 970,
           "y": 310,
-          "width": 330,
+          "width": 320,
           "height": 120,
           "isBold": false,
           "titleColor": {
@@ -4297,7 +4338,7 @@
           "schemaName": "Default",
           "tableName": "hall_types",
           "x": 1370,
-          "y": 140,
+          "y": 240,
           "width": 280,
           "height": 90,
           "isBold": false,
@@ -4313,7 +4354,7 @@
           "schemaName": "Default",
           "tableName": "films_period",
           "x": 40,
-          "y": 1040,
+          "y": 1030,
           "width": 240,
           "height": 120,
           "isBold": false,
@@ -4329,7 +4370,7 @@
           "schemaName": "Default",
           "tableName": "products",
           "x": 1000,
-          "y": 640,
+          "y": 650,
           "width": 260,
           "height": 180,
           "isBold": false,
@@ -4346,8 +4387,8 @@
           "tableName": "purchases",
           "x": 1000,
           "y": 880,
-          "width": 250,
-          "height": 140,
+          "width": 260,
+          "height": 160,
           "isBold": false,
           "titleColor": {
             "r": 252,
@@ -4409,7 +4450,7 @@
           "schemaName": "Default",
           "tableName": "group_of_places",
           "x": 1370,
-          "y": 350,
+          "y": 330,
           "width": 280,
           "height": 80,
           "isBold": false,
@@ -4425,7 +4466,7 @@
           "schemaName": "Default",
           "tableName": "hall_formats",
           "x": 1370,
-          "y": 50,
+          "y": 30,
           "width": 280,
           "height": 80,
           "isBold": false,
@@ -4754,24 +4795,16 @@
           },
           "vertices": [
             {
-              "x": 1325,
+              "x": 1305,
               "y": 280
-            },
-            {
-              "x": 1340,
-              "y": 280
-            },
-            {
-              "x": 1340,
-              "y": 190
             },
             {
               "x": 1355,
-              "y": 190
+              "y": 280
             }
           ],
           "label": {
-            "x": 1385,
+            "x": 1365,
             "y": 52,
             "width": 176,
             "height": 40,
@@ -4802,16 +4835,16 @@
           },
           "vertices": [
             {
-              "x": 1325,
+              "x": 1305,
               "y": 350
             },
             {
-              "x": 1325,
+              "x": 1305,
               "y": 200
             }
           ],
           "label": {
-            "x": 1381,
+            "x": 1361,
             "y": 242,
             "width": 149,
             "height": 40,
@@ -4842,7 +4875,7 @@
           },
           "vertices": [
             {
-              "x": 1325,
+              "x": 1305,
               "y": 370
             },
             {
@@ -4851,15 +4884,15 @@
             },
             {
               "x": 1350,
-              "y": 270
+              "y": 150
             },
             {
               "x": 1355,
-              "y": 270
+              "y": 150
             }
           ],
           "label": {
-            "x": 1304,
+            "x": 1284,
             "y": 252,
             "width": 356,
             "height": 40,
@@ -4939,7 +4972,7 @@
           "vertices": [
             {
               "x": 295,
-              "y": 1030
+              "y": 1020
             },
             {
               "x": 295,
@@ -4948,7 +4981,7 @@
           ],
           "label": {
             "x": 117,
-            "y": 1022,
+            "y": 1012,
             "width": 188,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -4979,11 +5012,11 @@
           "vertices": [
             {
               "x": 295,
-              "y": 1100
+              "y": 1090
             },
             {
               "x": 900,
-              "y": 1100
+              "y": 1090
             },
             {
               "x": 910,
@@ -4996,7 +5029,7 @@
           ],
           "label": {
             "x": 285,
-            "y": 1092,
+            "y": 1082,
             "width": 184,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5035,27 +5068,19 @@
             },
             {
               "x": 580,
-              "y": 800
-            },
-            {
-              "x": 640,
-              "y": 800
-            },
-            {
-              "x": 640,
-              "y": 830
+              "y": 820
             },
             {
               "x": 290,
-              "y": 830
+              "y": 820
             },
             {
               "x": 290,
-              "y": 880
+              "y": 870
             },
             {
               "x": 295,
-              "y": 880
+              "y": 870
             }
           ],
           "label": {
@@ -5110,7 +5135,7 @@
               "y": 200
             },
             {
-              "x": 965,
+              "x": 955,
               "y": 200
             }
           ],
@@ -5315,11 +5340,11 @@
             },
             {
               "x": 630,
-              "y": 880
+              "y": 870
             },
             {
               "x": 625,
-              "y": 880
+              "y": 870
             }
           ],
           "label": {
@@ -5359,7 +5384,7 @@
             },
             {
               "x": 985,
-              "y": 680
+              "y": 690
             }
           ],
           "label": {
@@ -5395,14 +5420,6 @@
           "vertices": [
             {
               "x": 1275,
-              "y": 800
-            },
-            {
-              "x": 1280,
-              "y": 800
-            },
-            {
-              "x": 1280,
               "y": 810
             },
             {
@@ -5412,7 +5429,7 @@
           ],
           "label": {
             "x": 1265,
-            "y": 752,
+            "y": 762,
             "width": 219,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5443,7 +5460,7 @@
           "vertices": [
             {
               "x": 295,
-              "y": 1070
+              "y": 1060
             },
             {
               "x": 295,
@@ -5452,7 +5469,7 @@
           ],
           "label": {
             "x": 97,
-            "y": 1022,
+            "y": 1012,
             "width": 208,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5483,24 +5500,28 @@
           "vertices": [
             {
               "x": 1355,
-              "y": 310
+              "y": 190
             },
             {
               "x": 1330,
-              "y": 310
+              "y": 190
             },
             {
               "x": 1330,
               "y": 200
             },
             {
-              "x": 1325,
+              "x": 1310,
+              "y": 200
+            },
+            {
+              "x": 1305,
               "y": 200
             }
           ],
           "label": {
             "x": 1184,
-            "y": 192,
+            "y": 72,
             "width": 241,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5531,16 +5552,16 @@
           "vertices": [
             {
               "x": 1665,
-              "y": 290
+              "y": 170
             },
             {
               "x": 1665,
-              "y": 390
+              "y": 370
             }
           ],
           "label": {
             "x": 1276,
-            "y": 222,
+            "y": 102,
             "width": 394,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5571,11 +5592,11 @@
           "vertices": [
             {
               "x": 1355,
-              "y": 110
+              "y": 90
             },
             {
               "x": 1060,
-              "y": 110
+              "y": 90
             },
             {
               "x": 1060,
@@ -5592,7 +5613,7 @@
           ],
           "label": {
             "x": 1145,
-            "y": 62,
+            "y": 42,
             "width": 220,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5623,25 +5644,81 @@
           "vertices": [
             {
               "x": 1355,
-              "y": 90
+              "y": 70
             },
             {
-              "x": 1330,
-              "y": 90
+              "x": 1310,
+              "y": 70
             },
             {
-              "x": 1330,
+              "x": 1310,
               "y": 200
             },
             {
-              "x": 1325,
+              "x": 1305,
               "y": 200
             }
           ],
           "label": {
             "x": 1181,
-            "y": 42,
+            "y": 22,
             "width": 184,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_purchases_payment_types_payment_type_id",
+          "sourceTableName": "purchases",
+          "sourceSchemaName": "Default",
+          "lineWidth": 3,
+          "visible": true,
+          "lineColor": {
+            "r": 252,
+            "g": 0,
+            "b": 157,
+            "a": 1
+          },
+          "vertices": [
+            {
+              "x": 985,
+              "y": 1020
+            },
+            {
+              "x": 980,
+              "y": 1020
+            },
+            {
+              "x": 980,
+              "y": 1160
+            },
+            {
+              "x": 20,
+              "y": 1160
+            },
+            {
+              "x": 20,
+              "y": 800
+            },
+            {
+              "x": 25,
+              "y": 800
+            }
+          ],
+          "label": {
+            "x": 691,
+            "y": 972,
+            "width": 304,
             "height": 40,
             "fontName": "Arial Unicode MS",
             "fontSize": 14,

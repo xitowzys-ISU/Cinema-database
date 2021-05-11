@@ -116,10 +116,11 @@ CREATE TABLE `products`  (
 
 CREATE TABLE `purchases`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `employee_id` int(0) UNSIGNED NOT NULL,
+  `employee_id` int(0) UNSIGNED NULL,
   `product_id` int(0) UNSIGNED NOT NULL,
   `quantity` int(0) UNSIGNED NOT NULL,
   `date` datetime(0) NOT NULL,
+  `payment_type_id` int(0) UNSIGNED NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -186,6 +187,7 @@ ALTER TABLE `price_group_of_seats` ADD CONSTRAINT `fk_price_group_of_seats_group
 ALTER TABLE `products` ADD CONSTRAINT `fk_products_deliveries_delivery_id` FOREIGN KEY (`delivery_id`) REFERENCES `deliveries` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_staff_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `staff` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_products_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_payment_types_payment_type_id` FOREIGN KEY (`payment_type_id`) REFERENCES `payment_types` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `sessions` ADD CONSTRAINT `fk_sessions_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `sessions` ADD CONSTRAINT `fk_sessions_films_film_id` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `staff` ADD CONSTRAINT `fk_staff_positions_position_id` FOREIGN KEY (`position_id`) REFERENCES `positions` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
