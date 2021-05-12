@@ -2439,251 +2439,6 @@
           },
           {
             "objectType": "Table_MARIADB",
-            "name": "tickets",
-            "comment": "",
-            "engine": "",
-            "characterSet": "",
-            "collation": "",
-            "autoIncrement": 0,
-            "tablespace": "",
-            "storage": "",
-            "insertMethod": "",
-            "connection": "",
-            "checksum": false,
-            "rowFormat": "",
-            "avgRowLength": 0,
-            "maxRows": 0,
-            "minRows": 0,
-            "keyBlockSize": 0,
-            "packKeys": "",
-            "delayKeyWrite": false,
-            "dataDirectory": "",
-            "indexDirectory": "",
-            "statsAutoRecalc": "",
-            "statsPersistent": "",
-            "statsSamplePages": "",
-            "union": "",
-            "pageChecksum": false,
-            "transactional": false,
-            "oldName": "",
-            "encryption": false,
-            "encryptionKeyID": 0,
-            "IETFQuotes": false,
-            "createOptions": "",
-            "createTime": "",
-            "checkTime": "",
-            "dataFree": 0,
-            "dataLength": 0,
-            "indexLength": 0,
-            "maxDataLength": 0,
-            "rows": 0,
-            "updateTime": "",
-            "DDL": "",
-            "partitionBy": "",
-            "partitionByExpr": "",
-            "partitions": 0,
-            "partitionKeyAlgorithm": "",
-            "subPartitionBy": "",
-            "subPartitionByExpr": "",
-            "subPartitions": 0,
-            "subPartitionKeyAlgorithm": "",
-            "fields": [
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": true,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "session_id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "session_id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "employee_id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": true,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "employee_id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "payment_type_id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "payment_type_id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "data",
-                "type": "datetime",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": false,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "data"
-              }
-            ],
-            "indexes": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_MARIADB",
-              "name": "",
-              "fields": [
-                {
-                  "objectType": "IndexField_MARIADB",
-                  "name": "id",
-                  "keyLength": 0,
-                  "order": "",
-                  "oldName": ""
-                }
-              ],
-              "oldName": "",
-              "indexMethod": "",
-              "comment": ""
-            },
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_MARIADB",
-                "name": "fk_tickets_sessions_session_id",
-                "fields": [
-                  "session_id"
-                ],
-                "referenceSchema": "Default",
-                "referenceTable": "sessions",
-                "referenceFields": [
-                  "id"
-                ],
-                "onDelete": "RESTRICT",
-                "onUpdate": "RESTRICT",
-                "sourceCardinality": "OneOrManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_MARIADB",
-                "name": "fk_tickets_staff_employee_id",
-                "fields": [
-                  "employee_id"
-                ],
-                "referenceSchema": "Default",
-                "referenceTable": "staff",
-                "referenceFields": [
-                  "id"
-                ],
-                "onDelete": "RESTRICT",
-                "onUpdate": "RESTRICT",
-                "sourceCardinality": "OneOrManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              },
-              {
-                "objectType": "ForeignKey_MARIADB",
-                "name": "fk_tickets_payment_types_payment_type_id",
-                "fields": [
-                  "payment_type_id"
-                ],
-                "referenceSchema": "Default",
-                "referenceTable": "payment_types",
-                "referenceFields": [
-                  "id"
-                ],
-                "onDelete": "RESTRICT",
-                "onUpdate": "RESTRICT",
-                "sourceCardinality": "OneOrManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              }
-            ],
-            "triggers": [],
-            "tablePartitions": []
-          },
-          {
-            "objectType": "Table_MARIADB",
             "name": "price_group_of_seats",
             "comment": "",
             "engine": "",
@@ -3134,217 +2889,6 @@
                 ],
                 "referenceSchema": "Default",
                 "referenceTable": "halls",
-                "referenceFields": [
-                  "id"
-                ],
-                "onDelete": "RESTRICT",
-                "onUpdate": "RESTRICT",
-                "sourceCardinality": "OneOrManyRelationship",
-                "targetCardinality": "OneAndOnlyOneRelationship",
-                "oldName": ""
-              }
-            ],
-            "triggers": [],
-            "tablePartitions": []
-          },
-          {
-            "objectType": "Table_MARIADB",
-            "name": "halls",
-            "comment": "",
-            "engine": "",
-            "characterSet": "",
-            "collation": "",
-            "autoIncrement": 0,
-            "tablespace": "",
-            "storage": "",
-            "insertMethod": "",
-            "connection": "",
-            "checksum": false,
-            "rowFormat": "",
-            "avgRowLength": 0,
-            "maxRows": 0,
-            "minRows": 0,
-            "keyBlockSize": 0,
-            "packKeys": "",
-            "delayKeyWrite": false,
-            "dataDirectory": "",
-            "indexDirectory": "",
-            "statsAutoRecalc": "",
-            "statsPersistent": "",
-            "statsSamplePages": "",
-            "union": "",
-            "pageChecksum": false,
-            "transactional": false,
-            "oldName": "",
-            "encryption": false,
-            "encryptionKeyID": 0,
-            "IETFQuotes": false,
-            "createOptions": "",
-            "createTime": "",
-            "checkTime": "",
-            "dataFree": 0,
-            "dataLength": 0,
-            "indexLength": 0,
-            "maxDataLength": 0,
-            "rows": 0,
-            "updateTime": "",
-            "DDL": "",
-            "partitionBy": "",
-            "partitionByExpr": "",
-            "partitions": 0,
-            "partitionKeyAlgorithm": "",
-            "subPartitionBy": "",
-            "subPartitionByExpr": "",
-            "subPartitions": 0,
-            "subPartitionKeyAlgorithm": "",
-            "fields": [
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": true,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "id"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "number",
-                "type": "tinyint",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "number"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "rows",
-                "type": "smallint",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "rows"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "seats",
-                "type": "smallint",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "seats"
-              },
-              {
-                "objectType": "TableField_MARIADB",
-                "name": "type_id",
-                "type": "int",
-                "length": 0,
-                "decimals": 0,
-                "isUnsigned": true,
-                "isZeroFill": false,
-                "setEnumValues": "",
-                "charset": "",
-                "collation": "",
-                "isNullable": false,
-                "defaultType": "Others",
-                "defaultValue": "",
-                "isOnUpdateCurrentTimestamp": false,
-                "isAutoInc": false,
-                "comment": "",
-                "columnFormat": "",
-                "isVirtual": false,
-                "isGeneratedAlways": false,
-                "virtualExpr": "",
-                "virtualType": "",
-                "oldName": "type_id"
-              }
-            ],
-            "indexes": [],
-            "primaryKey": {
-              "objectType": "PrimaryKey_MARIADB",
-              "name": "",
-              "fields": [
-                {
-                  "objectType": "IndexField_MARIADB",
-                  "name": "id",
-                  "keyLength": 0,
-                  "order": "",
-                  "oldName": ""
-                }
-              ],
-              "oldName": "",
-              "indexMethod": "",
-              "comment": ""
-            },
-            "foreignKeys": [
-              {
-                "objectType": "ForeignKey_MARIADB",
-                "name": "fk_halls_hall_types_type_id",
-                "fields": [
-                  "type_id"
-                ],
-                "referenceSchema": "Default",
-                "referenceTable": "hall_types",
                 "referenceFields": [
                   "id"
                 ],
@@ -3888,6 +3432,227 @@
           },
           {
             "objectType": "Table_MARIADB",
+            "name": "tickets",
+            "comment": "",
+            "engine": "",
+            "characterSet": "",
+            "collation": "",
+            "autoIncrement": 0,
+            "tablespace": "",
+            "storage": "",
+            "insertMethod": "",
+            "connection": "",
+            "checksum": false,
+            "rowFormat": "",
+            "avgRowLength": 0,
+            "maxRows": 0,
+            "minRows": 0,
+            "keyBlockSize": 0,
+            "packKeys": "",
+            "delayKeyWrite": false,
+            "dataDirectory": "",
+            "indexDirectory": "",
+            "statsAutoRecalc": "",
+            "statsPersistent": "",
+            "statsSamplePages": "",
+            "union": "",
+            "pageChecksum": false,
+            "transactional": false,
+            "oldName": "",
+            "encryption": false,
+            "encryptionKeyID": 0,
+            "IETFQuotes": false,
+            "createOptions": "",
+            "createTime": "",
+            "checkTime": "",
+            "dataFree": 0,
+            "dataLength": 0,
+            "indexLength": 0,
+            "maxDataLength": 0,
+            "rows": 0,
+            "updateTime": "",
+            "DDL": "",
+            "partitionBy": "",
+            "partitionByExpr": "",
+            "partitions": 0,
+            "partitionKeyAlgorithm": "",
+            "subPartitionBy": "",
+            "subPartitionByExpr": "",
+            "subPartitions": 0,
+            "subPartitionKeyAlgorithm": "",
+            "fields": [
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": true,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "session_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "session_id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "employee_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": true,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "employee_id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "payment_type_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "payment_type_id"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_MARIADB",
+              "name": "",
+              "fields": [
+                {
+                  "objectType": "IndexField_MARIADB",
+                  "name": "id",
+                  "keyLength": 0,
+                  "order": "",
+                  "oldName": ""
+                }
+              ],
+              "oldName": "",
+              "indexMethod": "",
+              "comment": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_tickets_sessions_session_id",
+                "fields": [
+                  "session_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "sessions",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_tickets_staff_employee_id",
+                "fields": [
+                  "employee_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "staff",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_tickets_payment_types_payment_type_id",
+                "fields": [
+                  "payment_type_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "payment_types",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ],
+            "triggers": [],
+            "tablePartitions": []
+          },
+          {
+            "objectType": "Table_MARIADB",
             "name": "sessions",
             "comment": "",
             "engine": "",
@@ -4011,7 +3776,7 @@
               },
               {
                 "objectType": "TableField_MARIADB",
-                "name": "datetime",
+                "name": "start",
                 "type": "datetime",
                 "length": 0,
                 "decimals": 0,
@@ -4031,7 +3796,7 @@
                 "isGeneratedAlways": false,
                 "virtualExpr": "",
                 "virtualType": "",
-                "oldName": "datetime"
+                "oldName": "start"
               }
             ],
             "indexes": [],
@@ -4077,6 +3842,381 @@
                 ],
                 "referenceSchema": "Default",
                 "referenceTable": "films",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ],
+            "triggers": [],
+            "tablePartitions": []
+          },
+          {
+            "objectType": "Table_MARIADB",
+            "name": "halls",
+            "comment": "",
+            "engine": "",
+            "characterSet": "",
+            "collation": "",
+            "autoIncrement": 0,
+            "tablespace": "",
+            "storage": "",
+            "insertMethod": "",
+            "connection": "",
+            "checksum": false,
+            "rowFormat": "",
+            "avgRowLength": 0,
+            "maxRows": 0,
+            "minRows": 0,
+            "keyBlockSize": 0,
+            "packKeys": "",
+            "delayKeyWrite": false,
+            "dataDirectory": "",
+            "indexDirectory": "",
+            "statsAutoRecalc": "",
+            "statsPersistent": "",
+            "statsSamplePages": "",
+            "union": "",
+            "pageChecksum": false,
+            "transactional": false,
+            "oldName": "",
+            "encryption": false,
+            "encryptionKeyID": 0,
+            "IETFQuotes": false,
+            "createOptions": "",
+            "createTime": "",
+            "checkTime": "",
+            "dataFree": 0,
+            "dataLength": 0,
+            "indexLength": 0,
+            "maxDataLength": 0,
+            "rows": 0,
+            "updateTime": "",
+            "DDL": "",
+            "partitionBy": "",
+            "partitionByExpr": "",
+            "partitions": 0,
+            "partitionKeyAlgorithm": "",
+            "subPartitionBy": "",
+            "subPartitionByExpr": "",
+            "subPartitions": 0,
+            "subPartitionKeyAlgorithm": "",
+            "fields": [
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": true,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "title",
+                "type": "varchar",
+                "length": 64,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "title"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "rows",
+                "type": "smallint",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "rows"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "seats",
+                "type": "smallint",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "seats"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "type_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "type_id"
+              }
+            ],
+            "indexes": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_MARIADB",
+              "name": "",
+              "fields": [
+                {
+                  "objectType": "IndexField_MARIADB",
+                  "name": "id",
+                  "keyLength": 0,
+                  "order": "",
+                  "oldName": ""
+                }
+              ],
+              "oldName": "",
+              "indexMethod": "",
+              "comment": ""
+            },
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_halls_hall_types_type_id",
+                "fields": [
+                  "type_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "hall_types",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              }
+            ],
+            "triggers": [],
+            "tablePartitions": []
+          },
+          {
+            "objectType": "Table_MARIADB",
+            "name": "additional_session_price",
+            "comment": "",
+            "engine": "",
+            "characterSet": "",
+            "collation": "",
+            "autoIncrement": 0,
+            "tablespace": "",
+            "storage": "",
+            "insertMethod": "",
+            "connection": "",
+            "checksum": false,
+            "rowFormat": "",
+            "avgRowLength": 0,
+            "maxRows": 0,
+            "minRows": 0,
+            "keyBlockSize": 0,
+            "packKeys": "",
+            "delayKeyWrite": false,
+            "dataDirectory": "",
+            "indexDirectory": "",
+            "statsAutoRecalc": "",
+            "statsPersistent": "",
+            "statsSamplePages": "",
+            "union": "",
+            "pageChecksum": false,
+            "transactional": false,
+            "oldName": "",
+            "encryption": false,
+            "encryptionKeyID": 0,
+            "IETFQuotes": false,
+            "createOptions": "",
+            "createTime": "",
+            "checkTime": "",
+            "dataFree": 0,
+            "dataLength": 0,
+            "indexLength": 0,
+            "maxDataLength": 0,
+            "rows": 0,
+            "updateTime": "",
+            "DDL": "",
+            "partitionBy": "",
+            "partitionByExpr": "",
+            "partitions": 0,
+            "partitionKeyAlgorithm": "",
+            "subPartitionBy": "",
+            "subPartitionByExpr": "",
+            "subPartitions": 0,
+            "subPartitionKeyAlgorithm": "",
+            "fields": [
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "session_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "session_id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "price_group_of_seat_id",
+                "type": "int",
+                "length": 0,
+                "decimals": 0,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "price_group_of_seat_id"
+              },
+              {
+                "objectType": "TableField_MARIADB",
+                "name": "price_increase",
+                "type": "decimal",
+                "length": 10,
+                "decimals": 2,
+                "isUnsigned": true,
+                "isZeroFill": false,
+                "setEnumValues": "",
+                "charset": "",
+                "collation": "",
+                "isNullable": false,
+                "defaultType": "Others",
+                "defaultValue": "",
+                "isOnUpdateCurrentTimestamp": false,
+                "isAutoInc": false,
+                "comment": "",
+                "columnFormat": "",
+                "isVirtual": false,
+                "isGeneratedAlways": false,
+                "virtualExpr": "",
+                "virtualType": "",
+                "oldName": "price_increase"
+              }
+            ],
+            "indexes": [],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_additional_session_price_sessions_session_id",
+                "fields": [
+                  "session_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "sessions",
+                "referenceFields": [
+                  "id"
+                ],
+                "onDelete": "RESTRICT",
+                "onUpdate": "RESTRICT",
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "OneAndOnlyOneRelationship",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_MARIADB",
+                "name": "fk_additional_session_price_price_group_of_seats_price_group_of",
+                "fields": [
+                  "price_group_of_seat_id"
+                ],
+                "referenceSchema": "Default",
+                "referenceTable": "price_group_of_seats",
                 "referenceFields": [
                   "id"
                 ],
@@ -4177,7 +4317,7 @@
           "type": "table",
           "schemaName": "Default",
           "tableName": "staff",
-          "x": 310,
+          "x": 380,
           "y": 830,
           "width": 300,
           "height": 250,
@@ -4194,8 +4334,8 @@
           "schemaName": "Default",
           "tableName": "sessions",
           "x": 40,
-          "y": 630,
-          "width": 240,
+          "y": 650,
+          "width": 280,
           "height": 120,
           "isBold": false,
           "titleColor": {
@@ -4227,7 +4367,7 @@
           "tableName": "positions",
           "x": 40,
           "y": 850,
-          "width": 240,
+          "width": 280,
           "height": 80,
           "isBold": false,
           "titleColor": {
@@ -4242,9 +4382,9 @@
           "schemaName": "Default",
           "tableName": "tickets",
           "x": 600,
-          "y": 630,
+          "y": 550,
           "width": 290,
-          "height": 140,
+          "height": 120,
           "isBold": false,
           "titleColor": {
             "r": 15,
@@ -4322,8 +4462,8 @@
           "schemaName": "Default",
           "tableName": "payment_types",
           "x": 40,
-          "y": 760,
-          "width": 240,
+          "y": 770,
+          "width": 280,
           "height": 80,
           "isBold": false,
           "titleColor": {
@@ -4355,7 +4495,7 @@
           "tableName": "films_period",
           "x": 40,
           "y": 1030,
-          "width": 240,
+          "width": 270,
           "height": 120,
           "isBold": false,
           "titleColor": {
@@ -4435,7 +4575,7 @@
           "tableName": "staff_statuses",
           "x": 40,
           "y": 940,
-          "width": 240,
+          "width": 270,
           "height": 80,
           "isBold": false,
           "titleColor": {
@@ -4476,6 +4616,22 @@
             "b": 23,
             "a": 1
           }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "additional_session_price",
+          "x": 40,
+          "y": 550,
+          "width": 310,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 15,
+            "g": 127,
+            "b": 254,
+            "a": 1
+          }
         }
       ],
       "layers": [
@@ -4484,7 +4640,7 @@
           "x": 930,
           "y": 0,
           "width": 760,
-          "height": 590,
+          "height": 510,
           "layerColor": {
             "r": 255,
             "g": 73,
@@ -4503,9 +4659,9 @@
         {
           "name": "Cinema",
           "x": 0,
-          "y": 590,
+          "y": 510,
           "width": 930,
-          "height": 590,
+          "height": 670,
           "layerColor": {
             "r": 15,
             "g": 127,
@@ -4526,7 +4682,7 @@
           "x": 0,
           "y": 0,
           "width": 930,
-          "height": 590,
+          "height": 510,
           "layerColor": {
             "r": 4,
             "g": 179,
@@ -4545,9 +4701,9 @@
         {
           "name": "Meal",
           "x": 930,
-          "y": 590,
+          "y": 510,
           "width": 760,
-          "height": 590,
+          "height": 670,
           "layerColor": {
             "r": 252,
             "g": 0,
@@ -4924,24 +5080,24 @@
           "vertices": [
             {
               "x": 585,
-              "y": 690
+              "y": 610
+            },
+            {
+              "x": 450,
+              "y": 610
             },
             {
               "x": 450,
               "y": 690
             },
             {
-              "x": 450,
-              "y": 670
-            },
-            {
-              "x": 295,
-              "y": 670
+              "x": 335,
+              "y": 690
             }
           ],
           "label": {
             "x": 395,
-            "y": 682,
+            "y": 602,
             "width": 200,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -4971,16 +5127,24 @@
           },
           "vertices": [
             {
-              "x": 295,
+              "x": 365,
               "y": 1020
             },
             {
-              "x": 295,
+              "x": 340,
+              "y": 1020
+            },
+            {
+              "x": 340,
+              "y": 890
+            },
+            {
+              "x": 335,
               "y": 890
             }
           ],
           "label": {
-            "x": 117,
+            "x": 187,
             "y": 1012,
             "width": 188,
             "height": 40,
@@ -5011,7 +5175,7 @@
           },
           "vertices": [
             {
-              "x": 295,
+              "x": 325,
               "y": 1090
             },
             {
@@ -5028,7 +5192,7 @@
             }
           ],
           "label": {
-            "x": 285,
+            "x": 315,
             "y": 1082,
             "width": 184,
             "height": 40,
@@ -5060,32 +5224,32 @@
           "vertices": [
             {
               "x": 585,
-              "y": 710
+              "y": 630
             },
             {
               "x": 580,
-              "y": 710
+              "y": 630
             },
             {
               "x": 580,
               "y": 820
             },
             {
-              "x": 290,
+              "x": 350,
               "y": 820
             },
             {
-              "x": 290,
+              "x": 350,
               "y": 870
             },
             {
-              "x": 295,
+              "x": 365,
               "y": 870
             }
           ],
           "label": {
             "x": 410,
-            "y": 702,
+            "y": 622,
             "width": 185,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5115,20 +5279,28 @@
           },
           "vertices": [
             {
-              "x": 295,
-              "y": 690
+              "x": 335,
+              "y": 710
             },
             {
-              "x": 350,
-              "y": 690
+              "x": 370,
+              "y": 710
             },
             {
-              "x": 350,
-              "y": 550
+              "x": 370,
+              "y": 540
+            },
+            {
+              "x": 870,
+              "y": 540
+            },
+            {
+              "x": 870,
+              "y": 430
             },
             {
               "x": 950,
-              "y": 550
+              "y": 430
             },
             {
               "x": 950,
@@ -5140,8 +5312,8 @@
             }
           ],
           "label": {
-            "x": 285,
-            "y": 682,
+            "x": 325,
+            "y": 702,
             "width": 163,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5171,24 +5343,20 @@
           },
           "vertices": [
             {
-              "x": 295,
-              "y": 710
-            },
-            {
-              "x": 360,
-              "y": 710
+              "x": 335,
+              "y": 730
             },
             {
               "x": 400,
-              "y": 710
+              "y": 730
             },
             {
               "x": 400,
-              "y": 520
+              "y": 530
             },
             {
               "x": 700,
-              "y": 520
+              "y": 530
             },
             {
               "x": 700,
@@ -5208,8 +5376,8 @@
             }
           ],
           "label": {
-            "x": 285,
-            "y": 702,
+            "x": 325,
+            "y": 722,
             "width": 163,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5240,28 +5408,32 @@
           "vertices": [
             {
               "x": 585,
-              "y": 730
+              "y": 650
             },
             {
               "x": 560,
-              "y": 730
+              "y": 650
             },
             {
               "x": 560,
               "y": 800
             },
             {
-              "x": 320,
+              "x": 340,
               "y": 800
             },
             {
-              "x": 295,
-              "y": 800
+              "x": 340,
+              "y": 810
+            },
+            {
+              "x": 335,
+              "y": 810
             }
           ],
           "label": {
             "x": 316,
-            "y": 682,
+            "y": 602,
             "width": 279,
             "height": 40,
             "fontName": "Arial Unicode MS",
@@ -5335,15 +5507,15 @@
               "y": 940
             },
             {
-              "x": 630,
+              "x": 750,
               "y": 940
             },
             {
-              "x": 630,
+              "x": 750,
               "y": 870
             },
             {
-              "x": 625,
+              "x": 695,
               "y": 870
             }
           ],
@@ -5459,16 +5631,24 @@
           },
           "vertices": [
             {
-              "x": 295,
+              "x": 365,
               "y": 1060
             },
             {
-              "x": 295,
+              "x": 330,
+              "y": 1060
+            },
+            {
+              "x": 330,
+              "y": 980
+            },
+            {
+              "x": 325,
               "y": 980
             }
           ],
           "label": {
-            "x": 97,
+            "x": 167,
             "y": 1012,
             "width": 208,
             "height": 40,
@@ -5708,11 +5888,11 @@
             },
             {
               "x": 20,
-              "y": 800
+              "y": 810
             },
             {
               "x": 25,
-              "y": 800
+              "y": 810
             }
           ],
           "label": {
@@ -5726,6 +5906,102 @@
               "r": 204,
               "g": 204,
               "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_additional_session_price_sessions_session_id",
+          "sourceTableName": "additional_session_price",
+          "sourceSchemaName": "Default",
+          "lineWidth": 3,
+          "visible": true,
+          "lineColor": {
+            "r": 15,
+            "g": 127,
+            "b": 254,
+            "a": 1
+          },
+          "vertices": [
+            {
+              "x": 25,
+              "y": 590
+            },
+            {
+              "x": 25,
+              "y": 690
+            }
+          ],
+          "label": {
+            "x": 41,
+            "y": 552,
+            "width": 312,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_additional_session_price_price_group_of_seats_price_group_of",
+          "sourceTableName": "additional_session_price",
+          "sourceSchemaName": "Default",
+          "lineWidth": 3,
+          "visible": true,
+          "lineColor": {
+            "r": 255,
+            "g": 73,
+            "b": 23,
+            "a": 1
+          },
+          "vertices": [
+            {
+              "x": 365,
+              "y": 610
+            },
+            {
+              "x": 380,
+              "y": 610
+            },
+            {
+              "x": 380,
+              "y": 490
+            },
+            {
+              "x": 1670,
+              "y": 490
+            },
+            {
+              "x": 1670,
+              "y": 150
+            },
+            {
+              "x": 1665,
+              "y": 150
+            }
+          ],
+          "label": {
+            "x": 355,
+            "y": 562,
+            "width": 416,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 51,
+              "g": 51,
+              "b": 51,
               "a": 1
             },
             "isFontBold": false,

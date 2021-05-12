@@ -1,3 +1,16 @@
+-- Показать все фильмы, которые будут показывать в определенный дату
+SELECT
+	`films`.`title`,
+	`films`.`duration`,
+	`mpaa_ratings`.`title` AS `mpaa_rating`
+FROM
+	`sessions`
+	JOIN `films` ON `sessions`.`film_id` LIKE `films`.`id`
+	JOIN `mpaa_ratings` ON `films`.`raiting_id` LIKE `mpaa_ratings`.`id`
+WHERE
+	DATE( `start` ) LIKE '2021-05-20'
+GROUP BY `films`.`title`;
+
 -- Жанры фильма
 SELECT 
 	`genres`.`title` AS 'genre'

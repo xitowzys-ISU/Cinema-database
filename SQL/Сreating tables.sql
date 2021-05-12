@@ -1,3 +1,9 @@
+CREATE TABLE `additional_session_price`  (
+  `session_id` int(0) UNSIGNED NOT NULL,
+  `price_group_of_seat_id` int(0) UNSIGNED NOT NULL,
+  `price_increase` decimal(10, 2) UNSIGNED NOT NULL
+);
+
 CREATE TABLE `deliveries`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `supplier_id` int(0) UNSIGNED NOT NULL,
@@ -62,7 +68,7 @@ CREATE TABLE `hall_types`  (
 
 CREATE TABLE `halls`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `number` tinyint(0) UNSIGNED NOT NULL,
+  `title` varchar(64) NOT NULL,
   `rows` smallint(0) UNSIGNED NOT NULL,
   `seats` smallint(0) UNSIGNED NOT NULL,
   `type_id` int(0) UNSIGNED NOT NULL,
@@ -128,7 +134,7 @@ CREATE TABLE `sessions`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `hall_id` int(0) UNSIGNED NOT NULL,
   `film_id` int(0) UNSIGNED NOT NULL,
-  `datetime` datetime(0) NOT NULL,
+  `start` datetime(0) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -166,10 +172,11 @@ CREATE TABLE `tickets`  (
   `session_id` int(0) UNSIGNED NOT NULL,
   `employee_id` int(0) UNSIGNED NULL,
   `payment_type_id` int(0) UNSIGNED NOT NULL,
-  `data` datetime(0) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
+ALTER TABLE `additional_session_price` ADD CONSTRAINT `fk_additional_session_price_sessions_session_id` FOREIGN KEY (`session_id`) REFERENCES `sessions` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `additional_session_price` ADD CONSTRAINT `fk_additional_session_price_price_group_of_seats_price_group_of` FOREIGN KEY (`price_group_of_seat_id`) REFERENCES `price_group_of_seats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `deliveries` ADD CONSTRAINT `fk_deliveries_suppliers_supplier_id` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `film_formats` ADD CONSTRAINT `fk_film_formats_films_film_id` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `film_formats` ADD CONSTRAINT `fk_film_formats_formats_format_id` FOREIGN KEY (`format_id`) REFERENCES `formats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
