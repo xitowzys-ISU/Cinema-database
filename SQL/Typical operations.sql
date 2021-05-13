@@ -1,3 +1,19 @@
+-- Показать сеансы фильмов в определенный дату
+SELECT
+	`sessions`.`id` AS 'sessions_id',
+	DATE_FORMAT( `start`, '%d.%m' ) AS 'date',
+	`films`.`title` AS 'title',
+	`halls`.`title` AS 'hall',
+	`mpaa_ratings`.`title` AS 'mpaa_ratings',
+	DATE_FORMAT(`films`.`duration`, '%H:%i') AS 'duration',
+	DATE_FORMAT( `start`, '%H:%i' ) AS 'start_film',
+	DATE_FORMAT(DATE_ADD(`films`.`duration`, interval (DATE_FORMAT( `start`, '%H:%i' )) HOUR_MINUTE), '%H:%i') AS 'end_film'
+FROM
+	`sessions`
+	JOIN `halls` ON `sessions`.`hall_id` LIKE `halls`.`id`
+	JOIN `films` ON `sessions`.`film_id` LIKE `films`.`id`
+	JOIN `mpaa_ratings` ON `films`.`raiting_id` LIKE `mpaa_ratings`.`id` WHERE DATE( `start` ) LIKE '2021-05-19';
+
 -- Показать все фильмы, которые будут показывать в определенный дату
 SELECT
 	`films`.`title`,

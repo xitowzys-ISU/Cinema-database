@@ -7,7 +7,9 @@ CREATE TABLE `additional_session_price`  (
 CREATE TABLE `deliveries`  (
   `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
   `supplier_id` int(0) UNSIGNED NOT NULL,
-  `date` datetime(0) NOT NULL,
+  `datetime` datetime(0) NOT NULL,
+  `product_id` int(0) UNSIGNED NOT NULL,
+  `quantity` int(0) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -116,17 +118,17 @@ CREATE TABLE `products`  (
   `price` decimal(10, 2) UNSIGNED NOT NULL,
   `unit_of_measurement` enum('kg', 'piece') NOT NULL,
   `quantity` int(0) UNSIGNED NOT NULL DEFAULT 0,
-  `delivery_id` int(0) UNSIGNED NULL,
   PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `purchases`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(0) UNSIGNED NOT NULL,
   `employee_id` int(0) UNSIGNED NULL,
   `product_id` int(0) UNSIGNED NOT NULL,
   `quantity` int(0) UNSIGNED NOT NULL,
   `date` datetime(0) NOT NULL,
-  `payment_type_id` int(0) UNSIGNED NULL,
+  `payment_type_id` int(0) UNSIGNED NOT NULL,
+  `operation_number` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -172,12 +174,17 @@ CREATE TABLE `tickets`  (
   `session_id` int(0) UNSIGNED NOT NULL,
   `employee_id` int(0) UNSIGNED NULL,
   `payment_type_id` int(0) UNSIGNED NOT NULL,
+  `row` smallint(0) UNSIGNED NOT NULL,
+  `seat` smallint(0) UNSIGNED NOT NULL,
+  `sold_out` datetime(0) NOT NULL,
+  `operation_number` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
 ALTER TABLE `additional_session_price` ADD CONSTRAINT `fk_additional_session_price_sessions_session_id` FOREIGN KEY (`session_id`) REFERENCES `sessions` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `additional_session_price` ADD CONSTRAINT `fk_additional_session_price_price_group_of_seats_price_group_of` FOREIGN KEY (`price_group_of_seat_id`) REFERENCES `price_group_of_seats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `deliveries` ADD CONSTRAINT `fk_deliveries_suppliers_supplier_id` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `deliveries` ADD CONSTRAINT `fk_deliveries_products_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `film_formats` ADD CONSTRAINT `fk_film_formats_films_film_id` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `film_formats` ADD CONSTRAINT `fk_film_formats_formats_format_id` FOREIGN KEY (`format_id`) REFERENCES `formats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `film_genres` ADD CONSTRAINT `fk_film_genres_films_film_id` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
@@ -191,7 +198,6 @@ ALTER TABLE `places` ADD CONSTRAINT `fk_places_halls_hall_id` FOREIGN KEY (`hall
 ALTER TABLE `places` ADD CONSTRAINT `fk_places_price_group_of_seats_price_group_of_seat_id` FOREIGN KEY (`price_group_of_seat_id`) REFERENCES `price_group_of_seats` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `price_group_of_seats` ADD CONSTRAINT `fk_price_group_of_seats_halls_hall_id` FOREIGN KEY (`hall_id`) REFERENCES `halls` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `price_group_of_seats` ADD CONSTRAINT `fk_price_group_of_seats_group_of_places_group_of_places_id` FOREIGN KEY (`group_of_places_id`) REFERENCES `group_of_places` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-ALTER TABLE `products` ADD CONSTRAINT `fk_products_deliveries_delivery_id` FOREIGN KEY (`delivery_id`) REFERENCES `deliveries` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_staff_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `staff` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_products_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `purchases` ADD CONSTRAINT `fk_purchases_payment_types_payment_type_id` FOREIGN KEY (`payment_type_id`) REFERENCES `payment_types` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
