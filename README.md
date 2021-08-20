@@ -12,7 +12,7 @@
 типовые операции: создание, правка, удаление объектов, заказ, покупка, выполнение, смена статусов и пр.
 
 ## Структура
-![](https://gitlab.com/xitowzys-isu-laboratory-work/fourth-semester/databases/cinema-database/-/raw/master/raw/Structure.svg)
+![](https://github.com/xitowzys/Cinema-database/raw/master/raw/Structure.svg)
 
 > <span style="color:red">База данных расчитана на один кинотеатр. Под сеть кинотеатров она не подойдет.</span>
 
